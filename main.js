@@ -9,20 +9,30 @@ var whenSaving = [];
 //   });
 
 
+function checkIfFormIsOk () {
 
-function logIn(email, password) {
-
-    if (email === email && password === password) {
-        setCurrentUser(email);
-    }
 }
 
 function registerNewUser(username, password, firstname, lastname, sex, email, phonenumber, adress, city, website, color, hobbies) {
     var currentUser = new User(username, password, firstname, lastname, sex, email, phonenumber, adress, city, website, color, hobbies);
 }
 
+function logIn(email, password) {
+
+    var indexOfEmail = myDatas.users.indexOf(email);
+    if (indexOfEmail) {
+        console.log(users[indexOfEmail]);
+        if (email === myDatas.users[indexOfEmail].email && password === myDatas.users[indexOfEmail].password) {
+            var user = myDatas.users[indexOfEmail];
+            setCurrentUser(user);
+            console.log("Connexion réussie");
+        } else {
+            console.log("Adresse email ou mot de passe invalide");            
+        }
+    }
+}
+
 function setCurrentUser(email) {
-    
     localStorage.setItem('myStorage', JSON.stringify(currentUser));
 }
 
@@ -115,15 +125,13 @@ function requestJSONLater() {
 
     for (var user of myDatas.users) {
         // paragraphe.innerHTML += `<br> ${user.firstname} ${user.lastname}`;
-
         var element = document.createElement("p");
-        element.setAttribute("id", `user_${user.firstname}`);
-        element.setAttribute("class", "card")
+        element.setAttribute("id", `user_${user.username}`);
+        element.setAttribute("class", "card");
         element.innerText = `${user.firstname} ${user.lastname} // ${user.city}`;
 
         paragraphe.appendChild(element);
         console.log("TADA ONE USER");
-
     }
 
 }

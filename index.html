@@ -20,6 +20,10 @@
 
 			<ul class="navbar-nav mr-auto">
 
+				<li class="nav-item">
+					<a href="#" class="nav-link">The Template</a>
+				</li>
+
 				<li class="nav-item dropdown">
 					<a class="nav-link dropdown-toggle" href="#" id="navbar1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Posts</a>
 					<div class="dropdown-menu" aria-labelledby="navbar1">
@@ -55,7 +59,7 @@
 										<input value="remember-me" type="checkbox"> Remember me
 									</label>
 								</div> -->
-							<button class="btn btn-sm btn-primary btn-block" type="submit">Log In</button>
+							<button class="btn btn-sm btn-primary btn-block" type="submit" onclick="logIn()">Log In</button>
 						</form>
 						<!-- <a class="dropdown-item disabled" href="#">Help</a> -->
 						<!-- <a class="dropdown-item disabled" href="#">Documentation</a>
@@ -95,117 +99,117 @@
 
 		<!--La bande du haut-->
 		<div id="x" class="row">
-			<div id="user-form" class="col-9">
+			<div id="user-form" class="col-8">
 
 				<h2 class="text-center">Personnal Infos Stealing Form</h2>
 
-				<div class="col-md-8 order-md-1">
-					<!-- <h4 class="mb-3">Billing address</h4> -->
-					<form class="needs-validation" novalidate="">
+				<!-- <h4 class="mb-3">Billing address</h4> -->
+				<form class="needs-validation" novalidate="">
 
-						<div class="row">
-							<div class="col-md-8 mb-3">
-								<div class="mb-3">
-									<label for="username">Username
-										<span class="text-info">(required)</span>
-									</label>
-									<input class="form-control" id="username" placeholder="Pyrobarbare" required="" type="text">
-									<div class="invalid-feedback" style="width: 100%;">
-										Your username is required.
-									</div>
-								</div>
-
-								<div class="mb-3">
-									<label for="username">Email
-										<span class="text-info">(required)</span>
-									</label>
-									<input class="form-control" id="email" placeholder="you@example.com" type="email">
-									<div class="invalid-feedback">
-										Please enter a valid email address.
-									</div>
-								</div>
-							</div>
-
-							<div class="col-md-4 mb-3">
-								<label for="username">Sex
+					<div class="row">
+						<div class="col-md-8 mb-3">
+							<div class="mb-3">
+								<label for="username">Username
 									<span class="text-info">(required)</span>
 								</label>
-								<br>
-								<input type="radio" id="x" name="sexxx" aria-label="Radio button for following text input"> Affirmatif
-								<br>
-								<input type="radio" id="y" name="sexxx" aria-label="Radio button for following text input"> Man
-								<br>
-								<input type="radio" id="z" name="sexxx" aria-label="Radio button for following text input"> Woman
-								<br>
+								<input class="form-control" id="username" placeholder="Pyrobarbare" required="" type="text">
+								<div class="invalid-feedback" style="width: 100%;">
+									Your username is required.
+								</div>
+							</div>
+
+							<div class="mb-3">
+								<label for="username">Email
+									<span class="text-info">(required)</span>
+								</label>
+								<input class="form-control" id="email" placeholder="you@example.com" type="email">
+								<div class="invalid-feedback">
+									Please enter a valid email address.
+								</div>
 							</div>
 						</div>
 
-						<div class="mb-3">
-							<label for="email">Phone Number</span>
+						<div class="col-md-4 mb-3">
+							<label for="username">Sex
+								<span class="text-info">(required)</span>
 							</label>
-							<input class="form-control" id="phone" placeholder="you@example.com" type="email">
+							<br>
+							<input type="radio" id="x" name="sexxx" aria-label="Radio button for following text input"> Affirmatif
+							<br>
+							<input type="radio" id="y" name="sexxx" aria-label="Radio button for following text input"> Man
+							<br>
+							<input type="radio" id="z" name="sexxx" aria-label="Radio button for following text input"> Woman
+							<br>
+						</div>
+					</div>
+
+					<hr class="mb-4">
+
+					<div class="mb-3">
+						<label for="email">Phone Number</span>
+						</label>
+						<input class="form-control" id="phone" placeholder="you@example.com" type="email">
+						<div class="invalid-feedback">
+							Please enter a cell phone number.
+						</div>
+					</div>
+
+					<hr class="mb-4">
+
+					<div class="row">
+						<div class="col-md-6 mb-3">
+							<label for="firstName">First name</label>
+							<input class="form-control" id="firstName" placeholder="Bob" value="" required="" type="text">
 							<div class="invalid-feedback">
-								Please enter a cell phone number.
+								Valid first name is required.
 							</div>
 						</div>
-
-						<div class="row">
-							<div class="col-md-6 mb-3">
-								<label for="firstName">First name</label>
-								<input class="form-control" id="firstName" placeholder="Bob" value="" required="" type="text">
-								<div class="invalid-feedback">
-									Valid first name is required.
-								</div>
-							</div>
-							<div class="col-md-6 mb-3">
-								<label for="lastName">Last name</label>
-								<input class="form-control" id="lastName" placeholder="Lenon" value="" required="" type="text">
-								<div class="invalid-feedback">
-									Valid last name is required.
-								</div>
-							</div>
-						</div>
-
-						<div class="mb-3">
-							<label for="address">Address</label>
-							<input class="form-control" id="address" placeholder="Street Life" required="" type="text">
+						<div class="col-md-6 mb-3">
+							<label for="lastName">Last name</label>
+							<input class="form-control" id="lastName" placeholder="Lenon" value="" required="" type="text">
 							<div class="invalid-feedback">
-								Please enter your shipping address.
+								Valid last name is required.
 							</div>
 						</div>
+					</div>
 
-						<div class="row">
-							<div class="col mb-3">
-								<label for="state">City</label>
-								<input class="form-control" id="city" placeholder="Rennes" required="" type="text">
-								<div class="invalid-feedback">
-									Please enter your current city.
-								</div>
+					<div class="mb-3">
+						<label for="address">Address</label>
+						<input class="form-control" id="address" placeholder="Street Life" required="" type="text">
+						<div class="invalid-feedback">
+							Please enter your shipping address.
+						</div>
+					</div>
+
+					<div class="row">
+						<div class="col mb-3">
+							<label for="state">City</label>
+							<input class="form-control" id="city" placeholder="Rennes" required="" type="text">
+							<div class="invalid-feedback">
+								Please enter your current city.
 							</div>
-							<div class="col mb-3">
-								<label for="zip">Zip</label>
-								<input class="form-control" id="zip" placeholder="" required="" type="number">
-								<div class="invalid-feedback">
-									Zip code required.
-								</div>
+						</div>
+						<div class="col mb-3">
+							<label for="zip">Zip</label>
+							<input class="form-control" id="zip" placeholder="" required="" type="number">
+							<div class="invalid-feedback">
+								Zip code required.
 							</div>
 						</div>
+					</div>
 
-						<hr class="mb-4">
+					<hr class="mb-4">
 
-						<div class="custom-control custom-checkbox">
-							<input class="custom-control-input" id="same-address" type="checkbox">
-							<label class="custom-control-label" for="same-address">Shipping address is the same as my billing address</label>
+					<div class="mb-3">
+						<label for="address">Hobbies</label>
+						<textarea class="form-control" id="hobbies" required="" type="text"></textarea>
+						<div class="invalid-feedback">
+							Please enter a valid URL
 						</div>
-						<div class="custom-control custom-checkbox">
-							<input class="custom-control-input" id="save-info" type="checkbox">
-							<label class="custom-control-label" for="save-info">Save this information for next time</label>
-						</div>
+					</div>
 
-						<hr class="mb-4">
-
-
-						<div class="mb-3">
+					<div class="row">
+						<div class="col mb-3">
 							<label for="address">Personnal Website</label>
 							<input class="form-control" id="website" placeholder="http://ewample.com" required="" type="text">
 							<div class="invalid-feedback">
@@ -213,24 +217,16 @@
 							</div>
 						</div>
 
-						<div class="mb-3">
+						<div class="col mb-3">
 							<label for="address">Favorite Color</label>
 							<input class="form-control" id="color" placeholder="http://ewample.com" required="" type="color">
 						</div>
+					</div>
 
-						<div class="mb-3">
-							<label for="address">Hobbies</label>
-							<textarea class="form-control" id="hobbies" required="" type="text"></textarea>
-							<div class="invalid-feedback">
-								Please enter a valid URL
-							</div>
-						</div>
+					<hr class="mb-4">
 
-						<hr class="mb-4">
-
-						<button class="btn btn-primary btn-lg btn-block" type="submit">Continue to robery</button>
-					</form>
-				</div>
+					<button class="btn btn-primary btn-lg btn-block" type="submit" onclick="checkIfFormIsOk()">Continue to robery</button>
+				</form>
 
 			</div>
 			<aside id="aside" class="col">
