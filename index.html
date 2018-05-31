@@ -1,19 +1,18 @@
 <!DOCTYPE html>
 <html>
+
 <head>
 	<meta charset="UTF-8">
 
-    <title>Far Worst Weather Machine</title>
-    <link rel="shortcut icon" type="image/png" href="favicon.png">
+	<title>Far Worst User Form</title>
+	<link rel="shortcut icon" type="image/png" href="favicon.png">
 
-	<script language="javascript" type="text/javascript" src="node_modules/jquery/dist/jquery.js"></script>
-	<!-- <script language="javascript" type="text/javascript" src="js/frameworks/popper.js"></script> -->
-	<script language="javascript" type="text/javascript" src="node_modules/bootstrap/dist/js/bootstrap.js"></script>
-    <link rel="stylesheet" type="text/css" href="node_modules/bootstrap/dist/css/bootstrap.css" />
+	<link rel="stylesheet" type="text/css" href="node_modules/bootstrap/dist/css/bootstrap.css" />
 
 	<link rel="stylesheet" href="style.css">
 
 </head>
+
 <body class="bg-secondary">
 
 	<header>
@@ -21,50 +20,60 @@
 
 			<ul class="navbar-nav mr-auto">
 
-					<li class="nav-item dropdown">
-						<a class="nav-link dropdown-toggle" href="#" id="navbar1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">File</a>
+				<li class="nav-item dropdown">
+					<a class="nav-link dropdown-toggle" href="#" id="navbar1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Posts</a>
 					<div class="dropdown-menu" aria-labelledby="navbar1">
+						<a class="dropdown-item disabled" href="#">New Post</a>
 						<div class="dropdown-divider"></div>
-						<h6 class="dropdown-header">Project</h6>
-						<a class="dropdown-item disabled" href="#">New</a>
-						<a class="dropdown-item disabled" href="#">Save</a>
-						<a class="dropdown-item disabled" href="#">load</a>
-						<h6 class="dropdown-header">Software</h6>
-						<a class="dropdown-item" href="javascript:self.close()">Quit</a>
-					</div>
-					</li>
-
-					<li class="nav-item dropdown">
-						<a class="nav-link dropdown-toggle" href="#" id="navbar1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Edit</a>
-					<div class="dropdown-menu" aria-labelledby="navbar1">
-						<div class="dropdown-divider"></div>
-						<h6 class="dropdown-header">Current Track</h6>
-						<a class="dropdown-item disabled" href="#">Add clip</a>
-						<a class="dropdown-item disabled" href="#">Add channel</a>
-						<a class="dropdown-item disabled" href="#">Add Return</a>
-						<a class="dropdown-item disabled" href="#">Add Scene</a>
-						<div class="dropdown-divider"></div>
+						<a class="dropdown-item disabled" href="#">Posts List</a>
 						<!-- <h6 class="dropdown-header">Project Settings</h6>
 						<a class="dropdown-item" href="#">MakeyMakey : <input type="checkbox" onclick="changemakeymakeyMode()"></a> -->
 					</div>
-					</li>
+				</li>
 
-					<li class="nav-item dropdown">
-						<a class="nav-link dropdown-toggle" href="#" id="navbar1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Infos</a>
+				<li class="nav-item dropdown">
+					<a class="nav-link dropdown-toggle" href="#" id="navbar1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Users</a>
 					<div class="dropdown-menu" aria-labelledby="navbar1">
-						<a class="dropdown-item disabled" href="#">Help</a>
-						<a class="dropdown-item disabled" href="#">Documentation</a>
-						<a class="dropdown-item disabled" href="#">About</a>
+						<a class="dropdown-item" href="#">Users List</a>
+						<div class="dropdown-divider"></div>
+						<a class="dropdown-item disabled" href="#">Log Out</a>
+						<a class="dropdown-item disabled" href="#">Quit</a>
 					</div>
-					</li>
+				</li>
+
+				<li class="nav-item dropdown">
+					<a class="nav-link dropdown-toggle" href="#" id="navbar1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Log In</a>
+					<div class="dropdown-menu p-0" aria-labelledby="navbar1">
+
+						<form class="form-signin">
+							<label for="inputEmail" class="sr-only">Email address</label>
+							<input id="inputEmail" class="form-control" placeholder="Email address" required="" autofocus="" type="email">
+							<label for="inputPassword" class="sr-only">Password</label>
+							<input id="inputPassword" class="form-control" placeholder="Password" required="" type="password">
+							<!-- <div class="checkbox mb-3">
+									<label>
+										<input value="remember-me" type="checkbox"> Remember me
+									</label>
+								</div> -->
+							<button class="btn btn-sm btn-primary btn-block" type="submit">Log In</button>
+						</form>
+						<!-- <a class="dropdown-item disabled" href="#">Help</a> -->
+						<!-- <a class="dropdown-item disabled" href="#">Documentation</a>
+						<a class="dropdown-item disabled" href="#">About</a> -->
+					</div>
+				</li>
+
+				<li class="nav-item">
+					<a href="#" class="nav-link">Join</a>
+				</li>
 
 			</ul>
 
 
 
-			<a class="navbar-brand" href="#">Far Worst Weather Machine</a>
+			<a class="navbar-brand" href="#">Far Worst User Form</a>
 		</nav>
-<!-- 
+		<!-- 
 			<nav class="row bg-dark">
 				<div class="ml-auto"></div>
 				<button class="btn btn-success" onclick="sessionPlay()">Play</button>
@@ -82,15 +91,158 @@
 			</nav> -->
 	</header>
 
-	<main class="container-fluid">
+	<main class="container">
 
 		<!--La bande du haut-->
 		<div id="x" class="row">
+			<div id="user-form" class="col-9">
 
+				<h2 class="text-center">Personnal Infos Stealing Form</h2>
+
+				<div class="col-md-8 order-md-1">
+					<!-- <h4 class="mb-3">Billing address</h4> -->
+					<form class="needs-validation" novalidate="">
+
+						<div class="row">
+							<div class="col-md-8 mb-3">
+								<div class="mb-3">
+									<label for="username">Username
+										<span class="text-info">(required)</span>
+									</label>
+									<input class="form-control" id="username" placeholder="Pyrobarbare" required="" type="text">
+									<div class="invalid-feedback" style="width: 100%;">
+										Your username is required.
+									</div>
+								</div>
+
+								<div class="mb-3">
+									<label for="username">Email
+										<span class="text-info">(required)</span>
+									</label>
+									<input class="form-control" id="email" placeholder="you@example.com" type="email">
+									<div class="invalid-feedback">
+										Please enter a valid email address.
+									</div>
+								</div>
+							</div>
+
+							<div class="col-md-4 mb-3">
+								<label for="username">Sex
+									<span class="text-info">(required)</span>
+								</label>
+								<br>
+								<input type="radio" id="x" name="sexxx" aria-label="Radio button for following text input"> Affirmatif
+								<br>
+								<input type="radio" id="y" name="sexxx" aria-label="Radio button for following text input"> Man
+								<br>
+								<input type="radio" id="z" name="sexxx" aria-label="Radio button for following text input"> Woman
+								<br>
+							</div>
+						</div>
+
+						<div class="mb-3">
+							<label for="email">Phone Number</span>
+							</label>
+							<input class="form-control" id="phone" placeholder="you@example.com" type="email">
+							<div class="invalid-feedback">
+								Please enter a cell phone number.
+							</div>
+						</div>
+
+						<div class="row">
+							<div class="col-md-6 mb-3">
+								<label for="firstName">First name</label>
+								<input class="form-control" id="firstName" placeholder="Bob" value="" required="" type="text">
+								<div class="invalid-feedback">
+									Valid first name is required.
+								</div>
+							</div>
+							<div class="col-md-6 mb-3">
+								<label for="lastName">Last name</label>
+								<input class="form-control" id="lastName" placeholder="Lenon" value="" required="" type="text">
+								<div class="invalid-feedback">
+									Valid last name is required.
+								</div>
+							</div>
+						</div>
+
+						<div class="mb-3">
+							<label for="address">Address</label>
+							<input class="form-control" id="address" placeholder="Street Life" required="" type="text">
+							<div class="invalid-feedback">
+								Please enter your shipping address.
+							</div>
+						</div>
+
+						<div class="row">
+							<div class="col mb-3">
+								<label for="state">City</label>
+								<input class="form-control" id="city" placeholder="Rennes" required="" type="text">
+								<div class="invalid-feedback">
+									Please enter your current city.
+								</div>
+							</div>
+							<div class="col mb-3">
+								<label for="zip">Zip</label>
+								<input class="form-control" id="zip" placeholder="" required="" type="number">
+								<div class="invalid-feedback">
+									Zip code required.
+								</div>
+							</div>
+						</div>
+
+						<hr class="mb-4">
+
+						<div class="custom-control custom-checkbox">
+							<input class="custom-control-input" id="same-address" type="checkbox">
+							<label class="custom-control-label" for="same-address">Shipping address is the same as my billing address</label>
+						</div>
+						<div class="custom-control custom-checkbox">
+							<input class="custom-control-input" id="save-info" type="checkbox">
+							<label class="custom-control-label" for="save-info">Save this information for next time</label>
+						</div>
+
+						<hr class="mb-4">
+
+
+						<div class="mb-3">
+							<label for="address">Personnal Website</label>
+							<input class="form-control" id="website" placeholder="http://ewample.com" required="" type="text">
+							<div class="invalid-feedback">
+								Please enter a valid URL
+							</div>
+						</div>
+
+						<div class="mb-3">
+							<label for="address">Favorite Color</label>
+							<input class="form-control" id="color" placeholder="http://ewample.com" required="" type="color">
+						</div>
+
+						<div class="mb-3">
+							<label for="address">Hobbies</label>
+							<textarea class="form-control" id="hobbies" required="" type="text"></textarea>
+							<div class="invalid-feedback">
+								Please enter a valid URL
+							</div>
+						</div>
+
+						<hr class="mb-4">
+
+						<button class="btn btn-primary btn-lg btn-block" type="submit">Continue to robery</button>
+					</form>
+				</div>
+
+			</div>
+			<aside id="aside" class="col">
+				<h4 class="text-center">All Users</h4>
+				<div>
+
+				</div>
+			</aside>
 		</div>
 		<!-- La bande du bas -->
 		<div id="y" class="row">
-
+			ROW Y
 		</div>
 	</main>
 
@@ -100,7 +252,12 @@
 
 	<!-- Scripts -->
 
+	<script language="javascript" type="text/javascript" src="node_modules/jquery/dist/jquery.js"></script>
+	<!-- <script language="javascript" type="text/javascript" src="js/frameworks/popper.js"></script> -->
+	<script language="javascript" type="text/javascript" src="node_modules/bootstrap/dist/js/bootstrap.js"></script>
+
 	<script language="javascript" type="text/javascript" src="main.js"></script>
 
 </body>
+
 </html>
