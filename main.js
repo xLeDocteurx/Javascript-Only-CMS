@@ -118,6 +118,11 @@ function logIn() {
                     var user = myDatas.users[indexOfUsername];
                     localStorage.setItem("currentUser", JSON.stringify(user));
                     alert("Connexion réussie");
+
+//                           /////////////////////
+
+
+
                 } else {
                     localStorage.removeItem("currentUser");
                     alert("Wrong password");

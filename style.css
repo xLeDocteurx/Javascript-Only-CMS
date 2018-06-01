@@ -40,3 +40,28 @@ input:invalid+div:after {
   background: #6c757d;
   background: linear-gradient(180deg, #6c757d 30%, rgba(0,212,255,0) 100%);
 } */
+
+#login-button {
+  margin-right: 10px;
+  color: rgba(255, 255, 255, 0.5);
+}
+
+#logged-button a {
+  display: inline;
+}
+
+
+#logged-button {
+  
+}
+
+#logged-button img {
+  display: inline;
+  width: 30px;
+  height: 30px;
+}
+
+#logged-button p {
+  display: inline;
+  color: rgba(255, 255, 255, 0.5);
+}
