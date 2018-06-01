@@ -1,54 +1,126 @@
+
 var myDatas = [];
 var myJSON = "JSON/save.json";
 
-requestJSON(myJSON);
+var regex = /^(?=.\d)(?=.[a-z])(?=.*[A-Z]).{8,16}$/g;
 
-var whenSaving = [];
+// console.log(localStorage.getItem("json").length);
+if (localStorage.getItem("json") == null) {
+    console.log(`Aucun LocalStorage "json" trouvé. nous allons le créer`);
+    requestJSON(myJSON);
+
+    console.log(myDatas);
+    console.log(localStorage.getItem("json"));
+} else {
+    console.log(`LocalStorage trouvé !!!`);
+    console.log(`LocalStorage trouvé : // ${typeof JSON.parse(localStorage.getItem("json"))} // "json" trouvé.`);
+    // console.log(`LocalStorage trouvé : // ${localStorage.getItem("json").split(",")} // "json" trouvé.`);
+    getLocalStorage();
+}
+
 // reader.addEventListener("load", function() {
 //     pre.textContent = JSON.stringify(reader.result, null, 2);
 //   });
 
 
-function checkIfFormIsOk () {
+function checkIfFormIsOk() {
 
+    var form = document.forms.namedItem("user-form");
+    // console.log(form);
+
+
+    // for (var element of form) {
+    //     console.log(element.id);
+    // }
+
+    // if (truc.value == null || truc.value == "") {
+    //     alert(`Vous devez impérativement remplir le champ ${truc.id} // ${truc.name}`);
+    // }
+
+
+    var email = form.email.value;
+    var password = form.password.value;
+    var x = form.x.checked;
+    var y = form.y.checked;
+    var firstname = form.firstname.value;
+    var lastname = form.lastname.value;
+    var address = form.address.value;
+    var city = form.city.value;
+    var zip = form.zip.value;
+    var phone = form.phone.value;
+    var username = form.username.value;
+    var hobbies = form.hobbies.value;
+    var website = form.website.value;
+    var color = form.color.value;
+
+    var sex;
+    if (x == true) {
+        sex = "m";
+    } else if (y == true) {
+        sex = "f"
+    }
+
+    registerNewUser(username, password, firstname, lastname, sex, email, phone, address, city, website, color, hobbies);
 }
 
 function registerNewUser(username, password, firstname, lastname, sex, email, phonenumber, adress, city, website, color, hobbies) {
+
     var currentUser = new User(username, password, firstname, lastname, sex, email, phonenumber, adress, city, website, color, hobbies);
+    // console.log(currentUser);
+    myDatas = JSON.parse(localStorage.getItem("json"));
+    myDatas.users.push(currentUser);
+    console.log("mydatas : ");
+    console.log(myDatas);
+    localStorage.setItem("json", JSON.stringify(myDatas));
+    console.log("localstorage : ");
+    console.log(localStorage.getItem("json"));
+    getLocalStorage();
 }
 
-function logIn(email, password) {
+function logIn() {
+    var form = document.forms.namedItem("signin-form");    
 
-    var indexOfEmail = myDatas.users.indexOf(email);
-    if (indexOfEmail) {
-        console.log(users[indexOfEmail]);
-        if (email === myDatas.users[indexOfEmail].email && password === myDatas.users[indexOfEmail].password) {
-            var user = myDatas.users[indexOfEmail];
-            setCurrentUser(user);
+    myDatas = JSON.parse(localStorage.getItem("json"));
+    var indexOfUsername = myDatas.users.indexOf(email);
+    if (indexOfUsername) {
+        console.log(myDatas.users[indexOfUsername]);
+        if (form.username === myDatas.users[indexOfUsername].username && form.password === myDatas.users[indexOfUsername].password) {
+            var user = myDatas.users[indexOfUsername];
+            localStorage.setItem("currentUser", JSON.stringify(user));
             console.log("Connexion réussie");
         } else {
-            console.log("Adresse email ou mot de passe invalide");            
+            localStorage.removeItem("currentUser");
+            console.log("Adresse email ou mot de passe invalide");
         }
     }
 }
 
-function setCurrentUser(email) {
-    localStorage.setItem('myStorage', JSON.stringify(currentUser));
-}
-
 function getCurrentUser() {
-    var user = JSON.parse(localStorage.getItem('myStorage'));
+    var user = JSON.parse(localStorage.getItem("currentUser"));
     return user;
 }
 
-function getOneUser(that) {
-    var user = myDatas.users[that.value];
+function getOneUser(id) {
+    var user = JSON.parse(localStorage.getItem("json")).users[id];
     return user;
 }
 
-function getAllUsers() {
-    var users = myDatas.users;
-    return users;
+function getLocalStorage() {
+    var local = JSON.parse(localStorage.getItem("json"));
+    // console.log(local);
+    // console.log(local.stringify(myDatas));
+
+    var paragraphe = document.getElementById("aside").getElementsByTagName("div")[0];
+    paragraphe.innerHTML = "";
+    for (var user of local.users) {
+        // paragraphe.innerHTML += `<br> ${user.firstname} ${user.lastname}`;
+        var element = document.createElement("p");
+        element.setAttribute("id", `user_${user.username}`);
+        element.setAttribute("class", "card");
+        element.innerText = `${user.firstname} ${user.lastname} // ${user.city}`;
+
+        paragraphe.appendChild(element);
+    }
 }
 
 class User {
@@ -88,6 +160,21 @@ class User {
 //     request.send();
 // }
 
+// function createJSONFile(name, json) {
+
+//     var file, url, reader = new FileReader;
+
+//     // code.classList.remove("invalid");
+//     file = new File([json], name, { type: "application/json" });
+//     url = URL.createObjectURL(file);
+//     document.location.href = "data:application/json;base64,/9j/4AAQSkZJRgABAQAAAQAB…";
+//     console.log("URL : ");
+//     console.log(url);
+//     console.log(file);
+//     return url;
+
+// }
+
 function convertJSON(url) {
 
     fetch(url, {
@@ -96,33 +183,28 @@ function convertJSON(url) {
         .then(response => response.json())
         .then(json => {
             myDatas = json;
-            // console.log(myDatas);
+            console.log(myDatas);
         });
-}
-
-function createJSONFile(name, json) {
-
-    var file, url, reader = new FileReader;
-
-    code.classList.remove("invalid");
-    file = new File([json], name, { type: "application/json" });
-    url = URL.createObjectURL(file);
-    return url;
-
 }
 
 function requestJSON(url) {
     convertJSON(url);
     setTimeout(requestJSONLater, 1000);
+    // localStorage.setItem("json", JSON.stringify(myDatas));
+    console.log(localStorage.getItem("json"));
 }
 
 function requestJSONLater() {
 
-    console.log(myDatas);
     // console.log(JSON.stringify(myDatas));
+    localStorage.setItem("json", JSON.stringify(myDatas));
+    console.log(myDatas);
 
     var paragraphe = document.getElementById("aside").getElementsByTagName("div")[0];
+    paragraphe.innerHTML = "";
 
+    myDatas = JSON.parse(localStorage.getItem("json"));
+    console.table(myDatas);
     for (var user of myDatas.users) {
         // paragraphe.innerHTML += `<br> ${user.firstname} ${user.lastname}`;
         var element = document.createElement("p");
@@ -131,7 +213,7 @@ function requestJSONLater() {
         element.innerText = `${user.firstname} ${user.lastname} // ${user.city}`;
 
         paragraphe.appendChild(element);
-        console.log("TADA ONE USER");
     }
+    localStorage.setItem("json", JSON.stringify(myDatas));
 
 }
