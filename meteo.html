@@ -1,21 +1,22 @@
 <!DOCTYPE html>
 <html>
-
 <head>
 	<meta charset="UTF-8">
 
-	<title>Far Worst Social Network</title>
-	<link rel="shortcut icon" ="image/png" href="favicon.png">
-type
-	<link rel="stylesheet" type="text/css" href="node_modules/bootstrap/dist/css/bootstrap.css" />
+    <title>Far Worst Weather Machine</title>
+    <link rel="shortcut icon" type="image/png" href="favicon.png">
+
+	<script language="javascript" type="text/javascript" src="node_modules/jquery/dist/jquery.js"></script>
+	<!-- <script language="javascript" type="text/javascript" src="js/frameworks/popper.js"></script> -->
+	<script language="javascript" type="text/javascript" src="node_modules/bootstrap/dist/js/bootstrap.js"></script>
+    <link rel="stylesheet" type="text/css" href="node_modules/bootstrap/dist/css/bootstrap.css" />
 
 	<link rel="stylesheet" href="style.css">
 
 </head>
-
 <body class="bg-secondary">
 
-	<header class="fixed-top">
+	<header>
 		<nav class="navbar navbar-expand navbar-dark bg-dark">
 
 			<ul class="navbar-nav mr-auto">
@@ -81,7 +82,7 @@ type
 
 			<a class="navbar-brand" href="index.html">Far Worst Social Network</a>
 		</nav>
-		<!-- 
+<!-- 
 			<nav class="row bg-dark">
 				<div class="ml-auto"></div>
 				<button class="btn btn-success" onclick="sessionPlay()">Play</button>
@@ -97,54 +98,43 @@ type
 				</div>
 				<div class="mr-auto"></div>
 			</nav> -->
-		<div class="page-header"></div>
-
 	</header>
-	<main class="container">
-		<br>
-		<br>
-		<br>
-		<br>
-		<br>
-		<br>
+
+	<main class="container-fluid">
+
 		<!--La bande du haut-->
-		<div id="dx" class="row">
-			<div class="col-md-8">
-
-				<!-- <hr class="mb-4"> -->
-				<!-- <br> -->
-				<h2 class="text-center">Acceuil // Index</h2>
-
-
-
-			</div>
-			<aside id="aside" class="col-md-4">
-				<h4 class="text-center">All Users</h4>
-				<div>
-
+		<div id="x" class="row">
+			<div id="left-group" class="col">
+				<div class="form-group">
+					<label for="exampleFormControlInput1">Email address</label>
+					<input type="text" class="form-control" placeholder="Enter a city">
 				</div>
-			</aside>
+				<button class="btn mx-auto my-3" onclick="request(weatherURL)">Sigourney Weather</button>
+			</div>
+			<div id="right-group" class="col">
+				<button class="btn mx-auto my-3" onclick="request(timeURL)">Time Is On My Side</button>
+			</div>
 		</div>
 		<!-- La bande du bas -->
-		<div id="dy" class="row">
-			<!-- ROW Y -->
+		<div id="y" class="row">
+
+			<div class="col-md-4"></div>
+			<div class="col-sm-4">
+				<div id="card" class="card">
+	
+				</div>
+			</div>
+			<div class="col-md-4"></div>
 		</div>
 	</main>
 
-	<footer class="page-footer row fixed-bottom">
-		<!-- // Footer // -->
+	<footer class="row fixed-bottom">
+		// Footer //
 	</footer>
 
 	<!-- Scripts -->
 
-	<script language="javascript" type="text/javascript" src="node_modules/jquery/dist/jquery.js"></script>
-	<!-- <script language="javascript" type="text/javascript" src="js/frameworks/popper.js"></script> -->
-	<script language="javascript" type="text/javascript" src="node_modules/bootstrap/dist/js/bootstrap.js"></script>
-
-	<script language="javascript" type="text/javascript" src="js/classes.js"></script>
-	<script language="javascript" type="text/javascript" src="js/json_methods.js"></script>
-	<script language="javascript" type="text/javascript" src="main.js"></script>
+	<script language="javascript" type="text/javascript" src="meteo/main.js"></script>
 
 </body>
-
 </html>

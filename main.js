@@ -2,7 +2,9 @@
 var myDatas = [];
 var myJSON = "JSON/save.json";
 
-var regex = /^(?=.\d)(?=.[a-z])(?=.*[A-Z]).{8,16}$/g;
+// var regex = /^(?=.\d)(?=.[a-z])(?=.*[A-Z]).{8,16}$/g;
+// var regex = ^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[!@#$%^&*_=+-]).{8,24}$;
+// var regex = /^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[!@#$%^&*_=+-]).{8,24}$/g;
 
 // console.log(localStorage.getItem("json").length);
 if (localStorage.getItem("json") == null) {

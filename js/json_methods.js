@@ -33,7 +33,7 @@ function requestJSONLater() {
         var element = document.createElement("p");
         element.setAttribute("id", `user_${user.username}`);
         element.setAttribute("class", "card");
-        element.innerText = `${user.firstname} ${user.lastname} // ${user.city}`;
+        element.innerText = `${user.username} // ${user.city}`;
 
         paragraphe.appendChild(element);
     }

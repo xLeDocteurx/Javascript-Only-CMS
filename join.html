@@ -23,9 +23,9 @@ type
 				<li class="nav-item dropdown">
 					<a class="nav-link dropdown-toggle" href="#" id="navbar1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Posts</a>
 					<div class="dropdown-menu" aria-labelledby="navbar1">
-						<a class="dropdown-item disabled" href="#">New Post</a>
+						<a class="dropdown-item" href="posts.html">Posts List</a>
 						<div class="dropdown-divider"></div>
-						<a class="dropdown-item disabled" href="posts.html">Posts List</a>
+						<a class="dropdown-item disabled" href="#">New Post</a>
 						<!-- <h6 class="dropdown-header">Project Settings</h6>
 						<a class="dropdown-item" href="#">MakeyMakey : <input type="checkbox" onclick="changemakeymakeyMode()"></a> -->
 					</div>
@@ -47,7 +47,7 @@ type
 
 						<form id="signin-form" class="form-signin">
 							<label for="inputUsername" class="sr-only">Username</label>
-							<input id="inputUsername" class="form-control" placeholder="Username" required="" autofocus="" type="text">
+							<input id="inputUsername" class="form-control" placeholder="Username" required="" type="text">
 							<label for="inputPassword" class="sr-only">Password</label>
 							<input id="inputPassword" class="form-control" placeholder="Password" required="" type="password">
 							<!-- <div class="checkbox mb-3">
@@ -64,7 +64,7 @@ type
 				</li>
 
 				<li class="nav-item">
-					<a href="meteo/index.html" class="nav-link">Meteo</a>
+					<a href="meteo.html" class="nav-link">Meteo</a>
 				</li>
 
 				<li class="nav-item">
@@ -116,32 +116,72 @@ type
 				<h2 class="text-center">Personnal Infos Stealing Form</h2>
 
 				<!-- <h4 class="mb-3">Billing address</h4> -->
-				<form id="user-form" class="needs-validation" novalidate="">
+				<form id="user-form" class="needs-validation">
+
 					<hr class="mb-4">
 
-					<h4 class="text-info">Informations :</h4>
+					<h4 class="text-info">Informations publiques visibles sur votre profil :</h4>
+					<br>
+
+					<div class="mb-3">
+						<label for="username">Username
+							<!-- <span class="text-warning">(required)</span> -->
+						</label>
+						<input class="form-control" id="username" placeholder="Pyrobarbare" type="text" required="">
+						<!-- <div class="invalid-feedback" style="width: 100%;">
+							Your username is required.
+						</div> -->
+					</div>
+
+					<div class="mb-3">
+						<label for="hobbies">Hobbies</label>
+						<textarea class="form-control" id="hobbies"type="text"></textarea>
+						<div class="invalid-feedback">
+							Please enter a valid URL
+						</div>
+					</div>
+
+					<div class="row">
+						<div class="col mb-3">
+							<label for="website">Personnal Website</label>
+							<input class="form-control" id="website" placeholder="http://ewample.com" type="text">
+							<div class="invalid-feedback">
+								Please enter a valid URL
+							</div>
+						</div>
+
+						<div class="col mb-3">
+							<label for="color"><a href="https://www.youtube.com/watch?v=W1oaXqBJRRQ">Any color you like</a></label>
+							<input class="form-control" id="color" placeholder="http://ewample.com" type="color">
+						</div>
+					</div>
+					
+					<hr class="mb-4">
+
+					<h4 class="text-info">Informations conservés pour un usage commercial personnel :</h4>
 					<br>
 
 					<div class="row">
+						
 						<div class="col-md-8 mb-3">
 							<div class="mb-3">
 								<label for="email">Email
-									<span class="text-warning">(required)</span>
+									<!-- <span class="text-warning">(required)</span> -->
 								</label>
-								<input class="form-control" id="email" placeholder="you@example.com" type="email">
-								<div class="invalid-feedback">
+								<input class="form-control" id="email" placeholder="you@example.com" type="email"  required="">
+								<!-- <div class="invalid-feedback">
 									Please enter a valid email address.
-								</div>
+								</div> -->
 							</div>
 							
 							<div class="mb-3">
 								<label for="password">Password
-									<span class="text-warning">(required)</span>
+									<!-- <span class="text-warning">(required)</span> -->
 								</label>
-								<input class="form-control" id="password" placeholder="you@example.com" type="email">
-								<div class="invalid-feedback">
+								<input class="form-control" id="password" placeholder="you@example.com" type="email" required="">
+								<!-- <div class="invalid-feedback">
 									Please enter a valid email address.
-								</div>
+								</div> -->
 							</div>
 						</div>
 
@@ -169,7 +209,7 @@ type
 						</div>
 						<div class="col-md-6 mb-3">
 							<label for="lastname">Last name</label>
-							<input class="form-control" id="lastname" placeholder="Lenon" value="" required="" type="text">
+							<input class="form-control" id="lastname" placeholder="Lenon" value="" type="text">
 							<div class="invalid-feedback">
 								Valid last name is required.
 							</div>
@@ -187,7 +227,7 @@ type
 					<div class="row">
 						<div class="col mb-3">
 							<label for="city">City</label>
-							<input class="form-control" id="city" placeholder="Rennes" required="" type="text">
+							<input class="form-control" id="city" placeholder="Rennes" type="text">
 							<div class="invalid-feedback">
 								Please enter your current city.
 							</div>
@@ -202,49 +242,11 @@ type
 					</div>
 
 					<div class="mb-3">
-						<label for="email">Phone Number</span>
+						<label for="phone">Phone Number</span>
 						</label>
 						<input class="form-control" id="phone" placeholder="you@example.com" type="email">
 						<div class="invalid-feedback">
 							Please enter a cell phone number.
-						</div>
-					</div>
-
-					<hr class="mb-4">
-
-					<h4 class="text-info">Informations visibles sur votre profil :</h4>
-					<br>
-
-					<div class="mb-3">
-						<label for="username">Username
-							<span class="text-warning">(required)</span>
-						</label>
-						<input class="form-control" id="username" placeholder="Pyrobarbare" required="" type="text">
-						<div class="invalid-feedback" style="width: 100%;">
-							Your username is required.
-						</div>
-					</div>
-
-					<div class="mb-3">
-						<label for="address">Hobbies</label>
-						<textarea class="form-control" id="hobbies" required="" type="text"></textarea>
-						<div class="invalid-feedback">
-							Please enter a valid URL
-						</div>
-					</div>
-
-					<div class="row">
-						<div class="col mb-3">
-							<label for="address">Personnal Website</label>
-							<input class="form-control" id="website" placeholder="http://ewample.com" required="" type="text">
-							<div class="invalid-feedback">
-								Please enter a valid URL
-							</div>
-						</div>
-
-						<div class="col mb-3">
-							<label for="address"><a href="https://www.youtube.com/watch?v=W1oaXqBJRRQ">Any color you like</a></label>
-							<input class="form-control" id="color" placeholder="http://ewample.com" required="" type="color">
 						</div>
 					</div>
 

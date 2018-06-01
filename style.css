@@ -27,7 +27,7 @@ input:invalid+div:after {
   height: 38px;
 }
 
-.page-footer {
+/* .page-footer {
 
   height: 30%;
   background: #6c757d;
@@ -39,4 +39,4 @@ input:invalid+div:after {
   height: 100px;
   background: #6c757d;
   background: linear-gradient(180deg, #6c757d 30%, rgba(0,212,255,0) 100%);
-}
+} */
