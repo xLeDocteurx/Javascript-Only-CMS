@@ -65,3 +65,44 @@ input:invalid+div:after {
   display: inline;
   color: rgba(255, 255, 255, 0.5);
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+#wanted {
+
+  display: none;
+}
+
+.card {
+
+  /* width: 500px; */
+}
+
+.card img {
+
+  width: 250px;
+}

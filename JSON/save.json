@@ -13,7 +13,8 @@
             "zip" : 31600,
             "website" : "http://hostamp.free.fr",
             "color" : "FFFFFF",
-            "hobbies" : "Tirer à l'arc, sauter à la corde, tirer sur la corde"
+            "hobbies" : "Tirer à l'arc, sauter à la corde, tirer sur la corde",
+            "img" : "001.jpg"
         },
         {
             "username" : "God",
@@ -28,7 +29,8 @@
             "zip" : 31600,
             "website" : "http://hostamp.free.fr",
             "color" : "FFFFFF",
-            "hobbies" : "Tirer à l'arc, sauter à la corde, tirer sur la corde"
+            "hobbies" : "Tirer à l'arc, sauter à la corde, tirer sur la corde",
+            "img" : "002.jpg"
         },
         {
             "username" : "Shoubang",
@@ -43,7 +45,8 @@
             "zip" : 31600,
             "website" : "http://hostamp.free.fr",
             "color" : "FFFFFF",
-            "hobbies" : "Tirer à l'arc, sauter à la corde, tirer sur la corde"
+            "hobbies" : "Tirer à l'arc, sauter à la corde, tirer sur la corde",
+            "img" : "003.jpg"
         },
         {
             "username" : "Gumball",
@@ -58,7 +61,8 @@
             "zip" : 31600,
             "website" : "http://hostamp.free.fr",
             "color" : "FFFFFF",
-            "hobbies" : "Tirer à l'arc, sauter à la corde, tirer sur la corde"
+            "hobbies" : "Tirer à l'arc, sauter à la corde, tirer sur la corde",
+            "img" : "004.jpg"
         }
     ],
     "posts" : [
