@@ -12,8 +12,8 @@ if (localStorage.getItem("json") == null) {
     console.log(myDatas);
     console.log(localStorage.getItem("json"));
 } else {
-    console.log(`LocalStorage trouvé !!!`);
-    console.log(`LocalStorage trouvé : // ${typeof JSON.parse(localStorage.getItem("json"))} // "json" trouvé.`);
+    // console.log(`LocalStorage trouvé !!!`);
+    // console.log(`LocalStorage trouvé : // ${typeof JSON.parse(localStorage.getItem("json"))} // "json" trouvé.`);
     // console.log(`LocalStorage trouvé : // ${localStorage.getItem("json").split(",")} // "json" trouvé.`);
     getLocalStorage();
 }
@@ -78,26 +78,64 @@ function registerNewUser(username, password, firstname, lastname, sex, email, ph
 }
 
 function logIn() {
-    var form = document.forms.namedItem("signin-form");    
+    var form = document.forms.namedItem("signin-form");
+
+
+    var username = String(form.inputUsername.value);
+    var password = String(form.inputPassword.value);
+    console.log("form username : ");
+    console.log(username);
+    console.log("form password : ");
+    console.log(password);
 
     myDatas = JSON.parse(localStorage.getItem("json"));
-    var indexOfUsername = myDatas.users.indexOf(email);
-    if (indexOfUsername) {
-        console.log(myDatas.users[indexOfUsername]);
-        if (form.username === myDatas.users[indexOfUsername].username && form.password === myDatas.users[indexOfUsername].password) {
-            var user = myDatas.users[indexOfUsername];
-            localStorage.setItem("currentUser", JSON.stringify(user));
-            console.log("Connexion réussie");
-        } else {
-            localStorage.removeItem("currentUser");
-            console.log("Adresse email ou mot de passe invalide");
-        }
+    var found = myDatas.users.find(element => {
+        return element.username == username;
+    });
+    // console.log("username in array :");
+    // console.log(found);
+
+
+    if (found != null) {
+        // console.log("found got found : ");
+        // console.log(found);
+        // var indexOfUsername = myDatas.users.indexOf(found);
+        // console.log("index of username : ");
+        // console.log(indexOfUsername);
+        console.log("console.log(myDatas.users.indexOf(found));");
+        console.log(myDatas.users.indexOf(found));
+
+        // if (myDatas.users.indexOf(found) > 0) {
+            var indexOfUsername = myDatas.users.indexOf(found);
+            console.log("index of username : ");
+            console.log(indexOfUsername);
+            console.log("Username in array");
+            console.log(myDatas.users[indexOfUsername].username);
+            if (username == myDatas.users[indexOfUsername].username) {
+                if (password == myDatas.users[indexOfUsername].password) {
+                    var user = myDatas.users[indexOfUsername];
+                    localStorage.setItem("currentUser", JSON.stringify(user));
+                    alert("Connexion réussie");
+                } else {
+                    localStorage.removeItem("currentUser");
+                    alert("Wrong password");
+                }
+            }
+        // }
+    } else {
+        localStorage.removeItem("currentUser");
+        alert("We don't know this user");
     }
 }
 
 function getCurrentUser() {
     var user = JSON.parse(localStorage.getItem("currentUser"));
     return user;
+}
+
+function logOut() {
+    localStorage.removeItem("currentUser");
+    window.location.href = "index.html"
 }
 
 function getOneUser(id) {
@@ -117,103 +155,8 @@ function getLocalStorage() {
         var element = document.createElement("p");
         element.setAttribute("id", `user_${user.username}`);
         element.setAttribute("class", "card");
-        element.innerText = `${user.firstname} ${user.lastname} // ${user.city}`;
+        element.innerText = `${user.username} // ${user.city}`;
 
         paragraphe.appendChild(element);
     }
-}
-
-class User {
-
-    constructor(username, password, firstname, lastname, sex, email, phonenumber, adress, city, website, color, hobbies) {
-
-        this.username = username;
-        this.firstname = firstname;
-        this.lastname = lastname;
-        this.sex = sex,
-            this.email = email,
-            this.phonenumber = this.phonenumber,
-            this.adress = adress,
-            this.city = city,
-            this.zip = zip,
-            this.website = website,
-            this.color = color,
-            this.hobbies = hobbies
-    }
-}
-
-// function convertJSON(url) {
-
-//     var folio = document.getElementById("folio");
-
-//     var request = new XMLHttpRequest();
-//     request.open('GET', url);
-//     // request.responseType = 'json';
-//     // request.send();
-//     request.onload = function () {
-//         console.log(request.responseText);
-//         diapo = request.responseText;        
-//         myDatas = JSON.parse(diapo);        
-//         // diapo.users.map(x => myDatas.push(x));
-//         console.log(myDatas);
-//     }
-//     request.send();
-// }
-
-// function createJSONFile(name, json) {
-
-//     var file, url, reader = new FileReader;
-
-//     // code.classList.remove("invalid");
-//     file = new File([json], name, { type: "application/json" });
-//     url = URL.createObjectURL(file);
-//     document.location.href = "data:application/json;base64,/9j/4AAQSkZJRgABAQAAAQAB…";
-//     console.log("URL : ");
-//     console.log(url);
-//     console.log(file);
-//     return url;
-
-// }
-
-function convertJSON(url) {
-
-    fetch(url, {
-        method: 'GET',
-    })
-        .then(response => response.json())
-        .then(json => {
-            myDatas = json;
-            console.log(myDatas);
-        });
-}
-
-function requestJSON(url) {
-    convertJSON(url);
-    setTimeout(requestJSONLater, 1000);
-    // localStorage.setItem("json", JSON.stringify(myDatas));
-    console.log(localStorage.getItem("json"));
-}
-
-function requestJSONLater() {
-
-    // console.log(JSON.stringify(myDatas));
-    localStorage.setItem("json", JSON.stringify(myDatas));
-    console.log(myDatas);
-
-    var paragraphe = document.getElementById("aside").getElementsByTagName("div")[0];
-    paragraphe.innerHTML = "";
-
-    myDatas = JSON.parse(localStorage.getItem("json"));
-    console.table(myDatas);
-    for (var user of myDatas.users) {
-        // paragraphe.innerHTML += `<br> ${user.firstname} ${user.lastname}`;
-        var element = document.createElement("p");
-        element.setAttribute("id", `user_${user.username}`);
-        element.setAttribute("class", "card");
-        element.innerText = `${user.firstname} ${user.lastname} // ${user.city}`;
-
-        paragraphe.appendChild(element);
-    }
-    localStorage.setItem("json", JSON.stringify(myDatas));
-
 }

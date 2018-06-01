@@ -6,6 +6,15 @@ body {
   line-height: 1; */
 }
 
+a {
+  color : #212529;
+}
+
+a:hover {
+  color : gainsboro;
+  text-decoration: none;
+}
+
 input:invalid+div:after {
   /* position: absolute;  */
   content: '✖';
