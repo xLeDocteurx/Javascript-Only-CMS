@@ -23,8 +23,8 @@
 							<a class="nav-link dropdown-toggle" href="#" id="navbar1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Posts</a>
 							<div class="dropdown-menu" aria-labelledby="navbar1">
 								<a class="dropdown-item" href="index.html">Posts List</a>
-								<div id="newpost-divider" class="dropdown-divider"></div>
-								<a id="newpost-link" class="dropdown-item" href="newpost.html">New Post</a>
+								<div class="dropdown-divider"></div>
+								<a class="dropdown-item" href="newpost.html">New Post</a>
 								<!-- <h6 class="dropdown-header">Project Settings</h6>
 																		<a class="dropdown-item" href="#">MakeyMakey : <input type="checkbox" onclick="changemakeymakeyMode()"></a> -->
 							</div>
@@ -120,10 +120,55 @@
 		<!--La bande du haut-->
 		<div id="dx" class="row">
 			<div class="col-md-2"></div>
-			<div id="dz" class="col-md-8">
+			<div class="col-md-8">
+
+				<!-- <hr class="mb-4"> -->
+				<!-- <br> -->
+				<h2 class="text-center">Create a new blog post</h2>
+
+				<!-- <h4 class="mb-3">Billing address</h4> -->
+				<form id="user-form" class="needs-validation">
+
+					<hr class="mb-4">
+
+					<div class="mb-3">
+						<label for="title">Title
+							<!-- <span class="text-warning">(required)</span> -->
+						</label>
+						<input class="form-control" id="title" placeholder="" type="text" required="">
+						<div class="invalid-feedback" style="width: 100%;">
+							A title for the blog post is required
+						</div>
+					</div>
+
+					<div class="mb-3">
+						<label for="content">Content</label>
+						<textarea class="form-control" id="content" type="text" required=""></textarea>
+						<div class="invalid-feedback">
+							Please enter something... At least try dude !
+						</div>
+					</div>
+
+					
+
+					<hr class="mb-4">
+
+					<button class="btn btn-primary btn-lg btn-block" onclick="checkIfEditIsOk()">Save</button>
+
+					<hr class="mb-4">
+					<br>
+					<br>
+
+				</form>
 
 			</div>
 			<div class="col-md-2"></div>
+			<!-- <aside id="aside" class="col-md-4">
+				<h4 class="text-center">All Users</h4>
+				<div>
+
+				</div>
+			</aside> -->
 		</div>
 		<!-- La bande du bas -->
 		<div id="dy" class="row">

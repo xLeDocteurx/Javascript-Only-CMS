@@ -42,6 +42,27 @@ function checkIfPostIsOk() {
     registerNewPost(title, content, author);
 }
 
+function editPost(id) {
+
+    console.log("user istrying to edit post n°" + id);
+}
+
+function deletePost(id) {
+
+    console.log("user istrying to delete post n°" + id);
+}
+
+function checkIfEditIsOk() {
+
+    var form = document.forms.namedItem("user-form");
+
+    var title = form.title.value;
+    var content = form.content.value;
+    var author = JSON.parse(localStorage.getItem("currentUser")).username;
+
+    registerNewPost(title, content, author);
+}
+
 function checkIfFormIsOk() {
 
     var form = document.forms.namedItem("user-form");
@@ -182,6 +203,8 @@ function isUserConnected() {
         console.log("user is not connected");
         document.getElementById("login-button").style.display = "inline-block";
         document.getElementById("logged-button").style.display = "none";
+        document.getElementById("newpost-link").style.display = "none";
+        document.getElementById("newpost-divider").style.display = "none";
 
         if (document.getElementsByClassName("post-edit")) {
             var postsedit = document.getElementsByClassName("post-edit");
@@ -233,6 +256,7 @@ function getLocalPosts() {
         var paragraphe = document.getElementById("dz");
         paragraphe.innerHTML = `<h2 class="text-center">Posts List</h2>
                                 <hr class="mb-4">`;
+                                var id = 0;
         for (var post of local.posts) {
             // paragraphe.innerHTML += `<br> ${user.firstname} ${user.lastname}`;
             var element = document.createElement("div");
@@ -245,8 +269,8 @@ function getLocalPosts() {
 							<h4 class="text-info">${post.title}</h4>
 						</div>
 						<div class="post-edit col-md-2 text-right">
-							<button class="btn btn-sm">✎</button>
-							<button class="btn btn-sm">␡</button>
+							<button class="btn btn-sm" onclick="editPost(${id})">✎</button>
+                            <button class="btn btn-sm" onclick="deletePost(${id})">␡</button>
 						</div>
                     </header>
                     <hr class="mb-4">
@@ -263,6 +287,7 @@ function getLocalPosts() {
 				</article>`;
 
             paragraphe.appendChild(element);
+            id += 1;
         }
     }
 }
