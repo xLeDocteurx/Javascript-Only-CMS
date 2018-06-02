@@ -31,22 +31,20 @@ isUserConnected();
 // reader.addEventListener("load", function() {
 //     pre.textContent = JSON.stringify(reader.result, null, 2);
 //   });
+function checkIfPostIsOk() {
 
+    var form = document.forms.namedItem("user-form");
+
+    var title = form.title.value;
+    var content = form.content.value;
+    var author = JSON.parse(localStorage.getItem("currentUser")).username;
+
+    registerNewPost(title, content, author);
+}
 
 function checkIfFormIsOk() {
 
     var form = document.forms.namedItem("user-form");
-    // console.log(form);
-
-
-    // for (var element of form) {
-    //     console.log(element.id);
-    // }
-
-    // if (truc.value == null || truc.value == "") {
-    //     alert(`Vous devez impérativement remplir le champ ${truc.id} // ${truc.name}`);
-    // }
-
 
     var email = form.email.value;
     var password = form.password.value;
@@ -75,30 +73,38 @@ function checkIfFormIsOk() {
 
 function registerNewPost(title, content, author) {
 
-    var newPost = new Post(title, content, author);
-    // console.log(newPost);
-    myDatas = JSON.parse(localStorage.getItem("json"));
-    myDatas.posts.push(newPost);
-    console.log("mydatas : ");
-    console.log(myDatas);
-    localStorage.setItem("json", JSON.stringify(myDatas));
-    console.log("localstorage : ");
-    console.log(localStorage.getItem("json"));
-    getLocalPosts();
+    if (title != "" && content != "") {
+
+        var newPost = new Post(title, content, author);
+        myDatas = JSON.parse(localStorage.getItem("json"));
+        myDatas.posts.push(newPost);
+        localStorage.setItem("json", JSON.stringify(myDatas));
+
+        backHomeMarty();
+    }
+}
+
+function backHomeMarty() {
+    window.location.href = "index.html";
 }
 
 function registerNewUser(username, password, firstname, lastname, sex, email, phonenumber, adress, city, website, color, hobbies) {
 
-    var currentUser = new User(username, password, firstname, lastname, sex, email, phonenumber, adress, city, website, color, hobbies);
-    // console.log(currentUser);
-    myDatas = JSON.parse(localStorage.getItem("json"));
-    myDatas.users.push(currentUser);
-    console.log("mydatas : ");
-    console.log(myDatas);
-    localStorage.setItem("json", JSON.stringify(myDatas));
-    console.log("localstorage : ");
-    console.log(localStorage.getItem("json"));
-    getLocalStorage();
+    if (username != "" && password != "" && email != "") {
+
+        var currentUser = new User(username, password, firstname, lastname, sex, email, phonenumber, adress, city, website, color, hobbies);
+        // console.log(currentUser);
+        myDatas = JSON.parse(localStorage.getItem("json"));
+        myDatas.users.push(currentUser);
+        console.log("mydatas : ");
+        console.log(myDatas);
+        localStorage.setItem("json", JSON.stringify(myDatas));
+        console.log("localstorage : ");
+        console.log(localStorage.getItem("json"));
+        getLocalStorage();
+
+        backHomeMarty();
+    }
 }
 
 function logIn() {
@@ -167,8 +173,9 @@ function isUserConnected() {
     if (localStorage.getItem("currentUser") != null) {
         console.log("user is connected");
         document.getElementById("login-button").style.display = "none";
-        document.getElementById("logged-button").style.display = "inline-block";
+        document.getElementById("logged-button").style.display = "inline-block";        
         document.getElementById("userpage").innerText = JSON.parse(localStorage.getItem("currentUser")).username;
+        document.getElementById("joinlink").style.display = "none";
 
 
     } else {

@@ -4,12 +4,8 @@
 <head>
 	<meta charset="UTF-8">
 
-	<title>Far Worst Users List</title>
-	<link rel="shortcut icon" type="image/png" href="favicon.png">
-
-	<script language="javascript" type="text/javascript" src="node_modules/jquery/dist/jquery.js"></script>
-	<!-- <script language="javascript" type="text/javascript" src="js/frameworks/popper.js"></script> -->
-	<script language="javascript" type="text/javascript" src="node_modules/bootstrap/dist/js/bootstrap.js"></script>
+	<title>Far Worst Social Network</title>
+	<link rel="shortcut icon"="image/png" href="favicon.png"> type
 	<link rel="stylesheet" type="text/css" href="node_modules/bootstrap/dist/css/bootstrap.css" />
 
 	<link rel="stylesheet" href="style.css">
@@ -18,7 +14,7 @@
 
 <body class="bg-secondary">
 
-	<header>
+	<header class="fixed-top">
 			<nav class="navbar navbar-expand navbar-dark bg-dark">
 
 					<ul class="navbar-nav mr-auto">
@@ -115,25 +111,85 @@
 				</div>
 				<div class="mr-auto"></div>
 			</nav> -->
-	</header>
+		<div class="page-header"></div>
 
-	<main class="container-fluid">
-		<section id="wanted" class="row">
-		</section>
+	</header>
+	<main class="container">
+		<br>
+		<br>
+		<!--La bande du haut-->
+		<div id="dx" class="row">
+			<div class="col-md-2"></div>
+			<div class="col-md-8">
+
+				<!-- <hr class="mb-4"> -->
+				<!-- <br> -->
+				<h2 class="text-center">Create a new blog post</h2>
+
+				<!-- <h4 class="mb-3">Billing address</h4> -->
+				<form id="user-form" class="needs-validation">
+
+					<hr class="mb-4">
+
+					<div class="mb-3">
+						<label for="title">Title
+							<!-- <span class="text-warning">(required)</span> -->
+						</label>
+						<input class="form-control" id="title" placeholder="" type="text" required="">
+						<div class="invalid-feedback" style="width: 100%;">
+							A title for the blog post is required
+						</div>
+					</div>
+
+					<div class="mb-3">
+						<label for="content">Content</label>
+						<textarea class="form-control" id="content" type="text" required=""></textarea>
+						<div class="invalid-feedback">
+							Please enter something... At least try dude !
+						</div>
+					</div>
+
+					
+
+					<hr class="mb-4">
+
+					<button class="btn btn-primary btn-lg btn-block" onclick="checkIfPostIsOk()">Unleash the kraken !</button>
+
+					<hr class="mb-4">
+					<br>
+					<br>
+
+				</form>
+
+			</div>
+			<div class="col-md-2"></div>
+			<!-- <aside id="aside" class="col-md-4">
+				<h4 class="text-center">All Users</h4>
+				<div>
+
+				</div>
+			</aside> -->
+		</div>
+		<!-- La bande du bas -->
+		<div id="dy" class="row">
+			<!-- ROW Y -->
+		</div>
 	</main>
 
-	<footer class="row fixed-bottom">
-		// Footer //
+	<footer class="page-footer row fixed-bottom">
+		<!-- // Footer // -->
 	</footer>
 
 	<!-- Scripts -->
 
+	<script language="javascript" type="text/javascript" src="node_modules/jquery/dist/jquery.js"></script>
+	<!-- <script language="javascript" type="text/javascript" src="js/frameworks/popper.js"></script> -->
+	<script language="javascript" type="text/javascript" src="node_modules/bootstrap/dist/js/bootstrap.js"></script>
+
+	<script language="javascript" type="text/javascript" src="js/classes.js"></script>
+	<script language="javascript" type="text/javascript" src="js/json_methods.js"></script>
 	<script language="javascript" type="text/javascript" src="main.js"></script>
 
-	<script>
-		// console.log(JSON.parse(localStorage.getItem("currentUser")));
-		oneUser(JSON.parse(localStorage.getItem("currentUser")));
-	</script>
 </body>
 
 </html>
