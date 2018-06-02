@@ -33,7 +33,7 @@
 												<a class="dropdown-item" href="#">MakeyMakey : <input type="checkbox" onclick="changemakeymakeyMode()"></a> -->
 					</div>
 				</li>
-<!-- 
+				<!-- 
 				<li class="nav-item dropdown">
 					<a class="nav-link dropdown-toggle" href="#" id="navbar2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Users</a>
 					<div class="dropdown-menu" aria-labelledby="navbar2">
@@ -48,14 +48,12 @@
 				<li class="nav-item dropdown">
 					<a class="nav-link dropdown-toggle" href="#" id="navbar3" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Tools</a>
 					<div class="dropdown-menu" aria-labelledby="navbar3">
-						<a href="https://www.youtube.com/watch?v=7Ajx-ABtbVM" class="dropdown-item">Tools - The band</a>
-						<div class="dropdown-divider"></div>
 						<a class="dropdown-item" href="ulist.html">User List MK I</a>
 						<a class="dropdown-item" href="meteo.html">Meteo</a>
-						<a class="dropdown-item" href="#">Find Simplon</a>
-						<a class="dropdown-item" href="#">Meteo</a>
+						<div class="dropdown-divider"></div>						
 						<a href="https://github.com/xLeDocteurx/Dry-Boiler-Template" target="_blank" class="dropdown-item">The Template</a>
-
+						<!-- <div class="dropdown-divider"></div>
+						<a href="https://www.youtube.com/watch?v=7Ajx-ABtbVM" class="dropdown-item">Tools - The band</a> -->
 					</div>
 				</li>
 
@@ -133,16 +131,60 @@
 				<button class="btn mx-auto my-3" onclick="request(weatherURL)">Sigourney Weather</button>
 			</div>
 		</div>
+
+
+
 		<!-- La bande du bas -->
 		<div id="y" class="row">
 
-			<div class="col-md-4"></div>
-			<div class="col-sm-4">
+			<div class="col-md-2"></div>
+			<div class="col">
 				<div id="card" class="card">
+					<section id="compare" class="row">
+
+						<div id="citydatas" class="data col">
+							<h2>Toulouse</h2>
+							<h4>Temperature</h4>
+							<p>
+								<span id="tempCity"></span>°C.</p>
+
+							<h4>Weather</h4>
+							<p>
+								<span id="weatherCity"></span>
+							</p>
+
+							<h4>Coordinates</h4>
+							<p>
+								<span id="coordinatesCity"></span>
+							</p>
+
+						</div>
+
+						<div id="stgaudatas" class="data col">
+							<h2>Saint-Gaudens</h2>
+							<h4>Temperature</h4>
+							<p>
+								<span id="temp"></span>°C.</p>
+							<h4>Weather</h4>
+							<p>
+								<span id="weather"></span>
+							</p>
+							<h4>Coordinates</h4>
+							<p>
+								<span id="coordinates"></span>
+							</p>
+						</div>
+
+					</section>
+
+					<div id="distancedatas" class="data row">
+						<p id="distance">Distance Toulouse / Saint-Gaudens : </p>
+						<p id="duration">Estimated duration : </p>
+					</div>
 
 				</div>
 			</div>
-			<div class="col-md-4"></div>
+			<div class="col-md-2"></div>
 		</div>
 	</main>
 
