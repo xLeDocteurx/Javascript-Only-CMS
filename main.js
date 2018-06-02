@@ -292,7 +292,6 @@ function oneUser(user) {
                         <h5 class="card-title">${user.firstname} ${user.lastname}</h5>
                         <p class="card-text">
                             <b>Sex : </b>${user.sex}<br>
-                            &<br>
                             <b>City : </b>${user.city}<br>
                             <b>Hobbies : </b>${user.hobbies}<br>
                             <b>website : </b><a href="${user.website}">${user.website}</a><br>

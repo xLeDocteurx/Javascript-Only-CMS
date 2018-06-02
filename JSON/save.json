@@ -1,10 +1,10 @@
 {
     "users" : [
         {
-            "username" : "dummy",
-            "password" : "1234",
-            "firstname" : "Laurent",
-            "lastname" : "Devernay",
+            "username" : "God",
+            "password" : "God",
+            "firstname" : "Johny",
+            "lastname" : "BeGood",
             "sex" : "m",
             "email" : "god@cloudcity.com",
             "phonenumber" : "05.61.98.59.01",
@@ -12,84 +12,87 @@
             "city" : "Muret",
             "zip" : 31600,
             "website" : "http://hostamp.free.fr",
-            "color" : "#000000",
+            "color" : "#1CB9F2",
             "hobbies" : "Tirer à l'arc, sauter à la corde, tirer sur la corde",
-            "img" : "001.jpg"
+            "img" : "004.jpg"
         },
         {
-            "username" : "God",
-            "password" : "1234",
-            "firstname" : "Laurent",
-            "lastname" : "Devernay",
+            "username" : "Malekit23",
+            "password" : "Malekit23",
+            "firstname" : "Logan",
+            "lastname" : "Bezard",
             "sex" : "m",
-            "email" : "god@cloudcity.com",
+            "email" : "malekit23@cloudcity.com",
             "phonenumber" : "05.61.98.59.01",
             "adress" : "46 route d'eaunes",
             "city" : "Muret",
             "zip" : 31600,
             "website" : "http://hostamp.free.fr",
-            "color" : "#121212",
+            "color" : "#F99372",
             "hobbies" : "Tirer à l'arc, sauter à la corde, tirer sur la corde",
             "img" : "002.jpg"
         },
         {
             "username" : "Shoubang",
-            "password" : "1234",
+            "password" : "Shoubang",
             "firstname" : "Barbara",
             "lastname" : "Dupond",
-            "sex" : "m",
-            "email" : "god@cloudcity.com",
+            "sex" : "f",
+            "email" : "shoubang@cloudcity.com",
             "phonenumber" : "05.61.98.59.01",
             "adress" : "46 route d'eaunes",
             "city" : "Muret",
             "zip" : 31600,
             "website" : "http://hostamp.free.fr",
-            "color" : "#CDCDCD",
+            "color" : "#00FA9A",
             "hobbies" : "Tirer à l'arc, sauter à la corde, tirer sur la corde",
             "img" : "003.jpg"
         },
         {
             "username" : "Gumball",
-            "password" : "1234",
+            "password" : "Gumball",
             "firstname" : "Penny",
-            "lastname" : "Dupont",
+            "lastname" : "Cacahuette",
             "sex" : "f",
-            "email" : "god@cloudcity.com",
+            "email" : "gumball@cloudcity.com",
             "phonenumber" : "05.61.98.59.01",
             "adress" : "46 route d'eaunes",
             "city" : "Muret",
             "zip" : 31600,
             "website" : "http://hostamp.free.fr",
-            "color" : "#E1E1E1",
+            "color" : "#FCCBBB",
             "hobbies" : "Tirer à l'arc, sauter à la corde, tirer sur la corde",
             "img" : "004.jpg"
         }
     ],
     "posts" : [
         {
-            "title" : "Post #1",
-            "content" : "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
-            "author" : "God"
+
+
+
+            "title" : "Stupid Trade!",
+            "content" : "The United States must, at long last, be treated fairly on Trade. If we charge a country ZERO to sell their goods, and they charge us 25, 50 or even 100 percent to sell ours, it is UNFAIR and can no longer be tolerated. That is not Free or Fair Trade, it is Stupid Trade!",
+            "author" : "Donald J. Trump"
         },
         {
-            "title" : "Post #2",
-            "content" : "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
-            "author" : "God"
+            "title" : "Dems corruption instead?",
+            "content" : "There was No Collusion with Russia (except by the Democrats). When will this very expensive Witch Hunt Hoax ever end? So bad for our Country. Is the Special Counsel/Justice Department leaking my lawyers letters to the Fake News Media? Should be looking at Dems corruption instead?",
+            "author" : "Donald J. Trump"
         },
         {
-            "title" : "Post #3",
-            "content" : "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
-            "author" : "God"
+            "title" : "Fox News",
+            "content" : "Fox News has been #1 for 197 months straight. In the latest ratings disaster for CNN they lost another 25% of their viewers. Fox has 10 of the top 15 shows and even hold the #1 spot in the younger key demo. The public is loudly rejecting @CNN.",
+            "author" : "Donald J. Trump"
         },
         {
-            "title" : "Post #4",
-            "content" : "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
-            "author" : "God"
+            "title" : "It’s a scam Investigation",
+            "content" : "....“$17 million spent, it’s a scam Investigation. Americans are being worked. We now know there was Russian collusion, with Russians and the Democrats. The Mueller team is stacked with anti-Trumpers, who actually represented Clinton people (& gave $’s to Crooked H).” Dan Bongino",
+            "author" : "Donald J. Trump"
         },
         {
-            "title" : "Post #5",
-            "content" : "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
-            "author" : "God"
+            "title" : "Pooding",
+            "content" : "Today, it was my great honor to be with the brave men and women of the United States Coast Guard!",
+            "author" : "Donald J. Trump"
         }
     ]
 }
