@@ -111,7 +111,7 @@ function checkUsername(that) {
     if (found == null) {
         console.log("input : " + input + " // toujours pas de match !");
     } else {
-        console.log("input : " + input + " // Cet username est déja présent dans la base de donnés !");     
+        console.log("input : " + input + " // Cet username est déja présent dans la base de donnés !");
         var inputField = document.getElementById("username");
         inputField.setAttribute("class", "form-control is-invalid");
     }
@@ -119,34 +119,39 @@ function checkUsername(that) {
 
 function checkIfFormIsOk() {
 
-    var form = document.forms.namedItem("user-form");
+    if (document.getElementsByClassName("invalid")[0]) {
+        
+        console.log(document.getElementsByClassName("invalid")[0]);
 
-    var email = form.email.value;
-    console.log(form.password);
-    form.password.type = "text";
-    console.log(form.password);
-    var password = form.password.value;
-    var x = form.x.checked;
-    var y = form.y.checked;
-    var firstname = form.firstname.value;
-    var lastname = form.lastname.value;
-    var address = form.address.value;
-    var city = form.city.value;
-    var zip = form.zip.value;
-    var phone = form.phone.value;
-    var username = form.username.value;
-    var hobbies = form.hobbies.value;
-    var website = form.website.value;
-    var color = form.color.value;
+        var form = document.forms.namedItem("user-form");
 
-    var sex;
-    if (x == true) {
-        sex = "m";
-    } else if (y == true) {
-        sex = "f"
+        var email = form.email.value;
+        console.log(form.password);
+        form.password.type = "text";
+        console.log(form.password);
+        var password = form.password.value;
+        var x = form.x.checked;
+        var y = form.y.checked;
+        var firstname = form.firstname.value;
+        var lastname = form.lastname.value;
+        var address = form.address.value;
+        var city = form.city.value;
+        var zip = form.zip.value;
+        var phone = form.phone.value;
+        var username = form.username.value;
+        var hobbies = form.hobbies.value;
+        var website = form.website.value;
+        var color = form.color.value;
+
+        var sex;
+        if (x == true) {
+            sex = "m";
+        } else if (y == true) {
+            sex = "f"
+        }
+
+        registerNewUser(username, password, firstname, lastname, sex, email, phone, address, city, website, color, hobbies);
     }
-
-    registerNewUser(username, password, firstname, lastname, sex, email, phone, address, city, website, color, hobbies);
 }
 
 function registerNewPost(title, content, author) {
@@ -168,23 +173,20 @@ function backHomeMarty() {
 
 function registerNewUser(username, password, firstname, lastname, sex, email, phonenumber, adress, city, website, color, hobbies) {
 
-    if (username != "" && password != "" && email != "") {
+    var currentUser = new User(username, password, firstname, lastname, sex, email, phonenumber, adress, city, website, color, hobbies);
+    // console.log(currentUser);
+    myDatas = JSON.parse(localStorage.getItem("json"));
+    myDatas.users.push(currentUser);
+    console.log("mydatas : ");
+    console.log(myDatas);
+    localStorage.setItem("json", JSON.stringify(myDatas));
+    console.log("localstorage : ");
+    console.log(localStorage.getItem("json"));
+    getLocalStorage();
 
-        var currentUser = new User(username, password, firstname, lastname, sex, email, phonenumber, adress, city, website, color, hobbies);
-        // console.log(currentUser);
-        myDatas = JSON.parse(localStorage.getItem("json"));
-        myDatas.users.push(currentUser);
-        console.log("mydatas : ");
-        console.log(myDatas);
-        localStorage.setItem("json", JSON.stringify(myDatas));
-        console.log("localstorage : ");
-        console.log(localStorage.getItem("json"));
-        getLocalStorage();
+    localStorage.setItem("currentUser", JSON.stringify(currentUser));
 
-        localStorage.setItem("currentUser", JSON.stringify(currentUser));
-
-        backHomeMarty();
-    }
+    // backHomeMarty();
 }
 
 function logIn() {
@@ -289,7 +291,7 @@ function oneUser(user) {
                 <div class="card w-50  mx-auto mt-5" style="width: 18rem;">
                     <img class="card-img-top m-auto" src="img/${user.img}" alt="Card image cap">
                     <div class="card-body">
-                        <h5 class="card-title">${user.firstname} ${user.lastname}</h5>
+                        <h5 class="card-title">${user.username} : ${user.firstname} ${user.lastname}</h5>
                         <p class="card-text">
                             <b>Sex : </b>${user.sex}<br>
                             <b>City : </b>${user.city}<br>

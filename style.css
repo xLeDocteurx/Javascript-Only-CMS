@@ -10,7 +10,7 @@ a {
   color: rgba(255, 255, 255, 0.5);
 }
 
-form a {
+form a, .card-text a {
   color : #212529;
 }
 

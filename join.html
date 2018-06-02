@@ -136,7 +136,7 @@
 
 					<div class="mb-3">
 						<label for="username">Username
-							<!-- <span class="text-warning">(required)</span> -->
+							<span class="text-danger">(required)</span>
 						</label>
 						<input class="form-control" id="username" placeholder="Pyrobarbare" type="text" required="" oninput="checkUsername(this)">
 						<div class="invalid-feedback" style="width: 100%;">
@@ -147,15 +147,15 @@
 					<div class="mb-3">
 						<label for="hobbies">Hobbies</label>
 						<textarea class="form-control" id="hobbies" type="text" maxlength="200"></textarea>
-						<div class="invalid-feedback">
+						<!-- <div class="invalid-feedback">
 							Please enter a valid URL
-						</div>
+						</div> -->
 					</div>
 
 					<div class="row">
 						<div class="col mb-3">
 							<label for="website">Personnal Website</label>
-							<input class="form-control" id="website" placeholder="http://ewample.com" type="text">
+							<input class="form-control" id="website" placeholder="http://ewample.com" type="url">
 							<div class="invalid-feedback">
 								Please enter a valid URL
 							</div>
@@ -179,28 +179,35 @@
 						<div class="col-md-8 mb-3">
 							<div class="mb-3">
 								<label for="email">Email
-									<!-- <span class="text-warning">(required)</span> -->
+									<span class="text-danger">(required)</span>
 								</label>
 								<input class="form-control" id="email" placeholder="you@example.com" type="email" required="">
-								<!-- <div class="invalid-feedback">
+								<div class="invalid-feedback">
 									Please enter a valid email address.
-								</div> -->
+								</div>
 							</div>
 
 							<div class="mb-3">
 								<label for="password">Password
-									<!-- <span class="text-warning">(required)</span> -->
+									<span class="text-danger">(required)</span>
 								</label>
-								<input class="form-control" id="password" placeholder="you@example.com" type="password" required="">
-								<!-- <div class="invalid-feedback">
-									Please enter a valid email address.
-								</div> -->
+								<input class="form-control" id="password" placeholder="tatcherIs100%sexy" type="password" required="" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*?[#?!@$%^*-]).{8,}">
+																					<!--(?=.*?[A-Z])(?=.*?[a-z])(?=.*?[0-9])(?=.*?[#?!@$%^&*-]).{8,}$-->
+								<div class="feedback">
+									<small>
+										
+										<i>
+											Password must contain at least 8 characters, one upper case, one number and one spécial char and must not be longer than 24 characters.
+										
+										</i>
+									</smal>
+								</div>
 							</div>
 						</div>
 
 						<div class="col-md-4 mb-3">
 							<label for="sex">Sex
-								<span class="text-warning">(affirmatif)</span>
+								<span class="text-danger">(affirmatif)</span>
 							</label>
 							<br>
 							<input type="radio" id="x" name="sex" aria-label="Radio button for following text input"> Man

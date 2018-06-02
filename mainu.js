@@ -17,7 +17,7 @@ function clickOnUser(that) {
                     <div class="card w-50  mx-auto mt-5" style="width: 18rem;">
                         <img class="card-img-top m-auto" src="img/${item.img}" alt="Card image cap">
                         <div class="card-body">
-                            <h5 class="card-title">${item.firstname} ${item.lastname}</h5>
+                        <h5 class="card-title">${item.username} : ${item.firstname} ${item.lastname}</h5>
                             <p class="card-text">
                                 <b>Sex : </b>${item.sex}<br>
                                 &<br>
