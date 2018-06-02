@@ -117,19 +117,7 @@
 	</header>
 
 	<main class="container-fluid">
-
-		<!--	Pour plus tard : La sidebar de gauche ( la biblihoteque contenant les modules et inch allah l'explorateur de fichiers )  
-		PS : Peut etre penser à mettre la sidebar dynamique à l'extérieur du main. -->
-
-		<!--La bande du haut-->
-		<div id="users" class="row">
-			<select id="users_select" class="custom-select" onchange="clickOnUser(this)" onclick="update()">
-				<option id="users_guide" disabled selected value>Users</option>
-			</select>
-		</div>
-		<!-- La bande du bas -->
 		<section id="wanted" class="row">
-
 		</section>
 	</main>
 
@@ -139,8 +127,12 @@
 
 	<!-- Scripts -->
 
-	<script language="javascript" type="text/javascript" src="mainu.js"></script>
+	<script language="javascript" type="text/javascript" src="main.js"></script>
 
+	<script>
+		// console.log(JSON.parse(localStorage.getItem("currentUser")));
+		oneUser(JSON.parse(localStorage.getItem("currentUser")));
+	</script>
 </body>
 
 </html>

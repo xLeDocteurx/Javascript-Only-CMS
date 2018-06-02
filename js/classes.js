@@ -16,3 +16,12 @@ class User {
             this.hobbies = hobbies
     }
 }
+
+class Post {
+    
+    constructor (title, content, author) {
+        this.title = title;
+        this.content = content;
+        this.author = author;
+    }
+}

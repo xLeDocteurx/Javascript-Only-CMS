@@ -41,9 +41,13 @@ input:invalid+div:after {
   background: linear-gradient(180deg, #6c757d 30%, rgba(0,212,255,0) 100%);
 } */
 
-#login-button {
+#login-button, #userpage {
   margin-right: 10px;
   color: rgba(255, 255, 255, 0.5);
+}
+
+#userpage:hover {
+  color: white;
 }
 
 #logged-button a {
