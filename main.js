@@ -270,18 +270,22 @@ function oneUser(user) {
     wanted.style.display = "block";
     wanted.innerHTML = `
                 <div class="col">          
-                    <div class="card w-50 mx-auto mt-5" style="width: 18rem;">
-                        <img class="card-img-top m-auto" src="img/${user.img}" alt="Card image cap">
-                        <div class="card-body">
-                            <h5 class="card-title">${user.firstname} ${user.lastname}</h5>
-                            <p class="card-text">
-                                <b>Sex : </b>${user.sex}<br>
-                                <b>City : </b>${user.city}<br>
-                                <b>Hobbies : </b>${user.hobbies}<br>
-                            </p>
-                        </div>
-                    </div>                                   
-                </div>
+                <div class="card w-50  mx-auto mt-5" style="width: 18rem;">
+                    <img class="card-img-top m-auto" src="img/${userz.img}" alt="Card image cap">
+                    <div class="card-body">
+                        <h5 class="card-title">${user.firstname} ${user.lastname}</h5>
+                        <p class="card-text">
+                            <b>Sex : </b>${user.sex}<br>
+                            &<br>
+                            <b>City : </b>${user.city}<br>
+                            <b>Hobbies : </b>${user.hobbies}<br>
+                            <b>website : </b><a href="${user.website}">${user.website}</a><br>
+                        </p>
+                        <b>Favorite Color : </b><div class="favcolor" style="background-color:${user.color}"></div><br>
+                        <br>
+                    </div>
+                </div>                                   
+            </div>
         `;
     // }
 }

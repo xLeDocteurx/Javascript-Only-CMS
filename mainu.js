@@ -25,7 +25,7 @@ function clickOnUser(that) {
                                 <b>Hobbies : </b>${item.hobbies}<br>
                                 <b>website : </b><a href="${item.website}">${item.website}</a><br>
                             </p>
-                            <b>Favorite Color : </b><div class="favcolor" style="background-color:#${item.color}"></div><br>
+                            <b>Favorite Color : </b><div class="favcolor" style="background-color:${item.color}"></div><br>
                             <br>
                         </div>
                     </div>                                   

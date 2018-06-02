@@ -23,21 +23,28 @@ function requestJSONLater() {
     localStorage.setItem("json", JSON.stringify(myDatas));
     console.log(myDatas);
 
-    var paragraphe = document.getElementById("aside").getElementsByTagName("div")[0];
-    paragraphe.innerHTML = "";
+    // if (document.getElementById("aside")) {
 
-    myDatas = JSON.parse(localStorage.getItem("json"));
-    console.table(myDatas);
-    for (var user of myDatas.users) {
-        // paragraphe.innerHTML += `<br> ${user.firstname} ${user.lastname}`;
-        var element = document.createElement("p");
-        element.setAttribute("id", `user_${user.username}`);
-        element.setAttribute("class", "card");
-        element.innerText = `${user.username} // ${user.city}`;
+    //     var paragraphe = document.getElementById("aside").getElementsByTagName("div")[0];
+    //     paragraphe.innerHTML = "";
+    
+    //     myDatas = JSON.parse(localStorage.getItem("json"));
+    //     console.table(myDatas);
+    //     for (var user of myDatas.users) {
+    //         // paragraphe.innerHTML += `<br> ${user.firstname} ${user.lastname}`;
+    //         var element = document.createElement("p");
+    //         element.setAttribute("id", `user_${user.username}`);
+    //         element.setAttribute("class", "card");
+    //         element.innerText = `${user.username} // ${user.city}`;
+    
+    //         paragraphe.appendChild(element);
+    //     }
+    //     localStorage.setItem("json", JSON.stringify(myDatas));
+    // }
 
-        paragraphe.appendChild(element);
+    if (document.getElementById("dz")) {
+        getLocalPosts();
     }
-    localStorage.setItem("json", JSON.stringify(myDatas));
 
 }
 
