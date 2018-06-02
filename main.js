@@ -49,7 +49,17 @@ function editPost(id) {
 
 function deletePost(id) {
 
-    console.log("user istrying to delete post n°" + id);
+    myDatas = JSON.parse(localStorage.getItem("json"));
+
+    // var found = myDatas.posts.find(element => {
+    //     return element.title == title;
+    // });
+    // var indexxx = myDatas.posts.indexOf(found);
+    console.log("user istrying to delete post n° " + id);
+
+    myDatas.posts.splice(id, 1);
+    localStorage.setItem("json", JSON.stringify(myDatas));
+    backHomeMarty();
 }
 
 function checkIfEditIsOk() {
@@ -68,6 +78,9 @@ function checkIfFormIsOk() {
     var form = document.forms.namedItem("user-form");
 
     var email = form.email.value;
+    console.log(form.password);
+    form.password.type = "text";
+    console.log(form.password);
     var password = form.password.value;
     var x = form.x.checked;
     var y = form.y.checked;
@@ -124,6 +137,8 @@ function registerNewUser(username, password, firstname, lastname, sex, email, ph
         console.log(localStorage.getItem("json"));
         getLocalStorage();
 
+        localStorage.setItem("currentUser", JSON.stringify(currentUser));
+
         backHomeMarty();
     }
 }
@@ -166,7 +181,6 @@ function logIn() {
             if (password == myDatas.users[indexOfUsername].password) {
                 var user = myDatas.users[indexOfUsername];
                 localStorage.setItem("currentUser", JSON.stringify(user));
-                alert("Connexion réussie");
 
                 //                           /////////////////////
 
@@ -194,7 +208,7 @@ function isUserConnected() {
     if (localStorage.getItem("currentUser") != null) {
         console.log("user is connected");
         document.getElementById("login-button").style.display = "none";
-        document.getElementById("logged-button").style.display = "inline-block";        
+        document.getElementById("logged-button").style.display = "inline-block";
         document.getElementById("userpage").innerText = JSON.parse(localStorage.getItem("currentUser")).username;
         document.getElementById("joinlink").style.display = "none";
 
@@ -228,16 +242,14 @@ function oneUser(user) {
     wanted.style.display = "block";
     wanted.innerHTML = `
                 <div class="col">          
-                    <div class="card w-50 m-auto" style="width: 18rem;">
+                    <div class="card w-50 mx-auto mt-5" style="width: 18rem;">
                         <img class="card-img-top m-auto" src="img/${user.img}" alt="Card image cap">
                         <div class="card-body">
                             <h5 class="card-title">${user.firstname} ${user.lastname}</h5>
                             <p class="card-text">
                                 <b>Sex : </b>${user.sex}<br>
-                                &<br>
                                 <b>City : </b>${user.city}<br>
                                 <b>Hobbies : </b>${user.hobbies}<br>
-                                <br>
                             </p>
                         </div>
                     </div>                                   
@@ -256,11 +268,11 @@ function getLocalPosts() {
         var paragraphe = document.getElementById("dz");
         paragraphe.innerHTML = `<h2 class="text-center">Posts List</h2>
                                 <hr class="mb-4">`;
-                                var id = 0;
+        var id = 0;
         for (var post of local.posts) {
             // paragraphe.innerHTML += `<br> ${user.firstname} ${user.lastname}`;
             var element = document.createElement("div");
-            element.setAttribute("id", `post_${post.title}`);
+            element.setAttribute("id", `post_${id}`);
             element.setAttribute("class", "card mb-5");
             element.innerHTML = `<hr class="mb-4">
 				<article>
