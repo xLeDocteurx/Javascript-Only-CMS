@@ -101,6 +101,22 @@ function checkIfEditIsOk() {
     registerNewPost(title, content, author);
 }
 
+function checkUsername(that) {
+    var input = that.value;
+
+    myDatas = JSON.parse(localStorage.getItem("json"));
+    var found = myDatas.users.find(element => {
+        return element.username == input;
+    });
+    if (found == null) {
+        console.log("input : " + input + " // toujours pas de match !");
+    } else {
+        console.log("input : " + input + " // Cet username est déja présent dans la base de donnés !");     
+        var inputField = document.getElementById("username");
+        inputField.setAttribute("class", "form-control is-invalid");
+    }
+}
+
 function checkIfFormIsOk() {
 
     var form = document.forms.namedItem("user-form");
@@ -271,7 +287,7 @@ function oneUser(user) {
     wanted.innerHTML = `
                 <div class="col">          
                 <div class="card w-50  mx-auto mt-5" style="width: 18rem;">
-                    <img class="card-img-top m-auto" src="img/${userz.img}" alt="Card image cap">
+                    <img class="card-img-top m-auto" src="img/${user.img}" alt="Card image cap">
                     <div class="card-body">
                         <h5 class="card-title">${user.firstname} ${user.lastname}</h5>
                         <p class="card-text">

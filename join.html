@@ -138,15 +138,15 @@
 						<label for="username">Username
 							<!-- <span class="text-warning">(required)</span> -->
 						</label>
-						<input class="form-control" id="username" placeholder="Pyrobarbare" type="text" required="">
-						<!-- <div class="invalid-feedback" style="width: 100%;">
-							Your username is required.
-						</div> -->
+						<input class="form-control" id="username" placeholder="Pyrobarbare" type="text" required="" oninput="checkUsername(this)">
+						<div class="invalid-feedback" style="width: 100%;">
+							This username already exist !
+						</div>
 					</div>
 
 					<div class="mb-3">
 						<label for="hobbies">Hobbies</label>
-						<textarea class="form-control" id="hobbies" type="text"></textarea>
+						<textarea class="form-control" id="hobbies" type="text" maxlength="200"></textarea>
 						<div class="invalid-feedback">
 							Please enter a valid URL
 						</div>
