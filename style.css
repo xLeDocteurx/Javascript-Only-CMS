@@ -26,6 +26,11 @@ input:invalid+div:after {
   color: #8b0000;
 }
 
+.favcolor {
+  width: 300px;
+  height: 100px;
+}
+
 #color {
 
   height: 38px;

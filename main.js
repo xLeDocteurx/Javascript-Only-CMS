@@ -45,6 +45,34 @@ function checkIfPostIsOk() {
 function editPost(id) {
 
     console.log("user istrying to edit post n°" + id);
+    myDatas = JSON.parse(localStorage.getItem("json"));
+
+    var actualpostcontent = document.getElementById(`post-content_${id}`);
+    var newpostcontent = document.createElement("textarea");
+    var newpostbutton = document.createElement("button");
+    newpostbutton.setAttribute("class", "btn btn-sm btn-warning");
+    newpostbutton.setAttribute("onclick", `registerPostContent(${id})`);
+    newpostbutton.innerText = "Save It !";
+    newpostcontent.setAttribute("id", `new-post-content_${id}`);
+    newpostcontent.setAttribute("class", `w-100`);
+    newpostcontent.setAttribute("style", `height:200px;`);
+    newpostcontent.innerText = myDatas.posts[id].content;
+    actualpostcontent.parentNode.insertBefore(newpostcontent, document.getElementById(`guide_${id}`));
+    actualpostcontent.parentNode.insertBefore(newpostbutton, document.getElementById(`guide_${id}`));
+
+    actualpostcontent.innerHTML = "";
+    // actualpostcontent.innerHTML = ``;
+
+}
+
+function registerPostContent(id) {
+
+    myDatas.posts[id].content = document.getElementById(`new-post-content_${id}`).value;
+    console.log(document.getElementById(`new-post-content_${id}`).value);
+    // console.log(myDatas.posts[id].content);
+    localStorage.setItem("json", JSON.stringify(myDatas));
+    backHomeMarty();
+    console.log("user is trying to save a post. post : " + id);
 }
 
 function deletePost(id) {
@@ -273,7 +301,7 @@ function getLocalPosts() {
             // paragraphe.innerHTML += `<br> ${user.firstname} ${user.lastname}`;
             var element = document.createElement("div");
             element.setAttribute("id", `post_${id}`);
-            element.setAttribute("class", "card mb-5");
+            element.setAttribute("class", "card mb-5 px-4 py-3");
             element.innerHTML = `<hr class="mb-4">
 				<article>
 					<header class="row">
@@ -286,10 +314,10 @@ function getLocalPosts() {
 						</div>
                     </header>
                     <hr class="mb-4">
-					<p>
-						Content : ${post.content}
+                    <p id="post-content_${id}">
+						${post.content}
                     </p>
-                    <hr class="mb-4">
+                    <hr id="guide_${id}" class="mb-4">
 					<footer>
 						<!-- <small> -->
 							Author : ${post.author}

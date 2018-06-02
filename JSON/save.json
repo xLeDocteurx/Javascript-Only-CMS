@@ -12,7 +12,7 @@
             "city" : "Muret",
             "zip" : 31600,
             "website" : "http://hostamp.free.fr",
-            "color" : "FFFFFF",
+            "color" : "000000",
             "hobbies" : "Tirer à l'arc, sauter à la corde, tirer sur la corde",
             "img" : "001.jpg"
         },
@@ -28,7 +28,7 @@
             "city" : "Muret",
             "zip" : 31600,
             "website" : "http://hostamp.free.fr",
-            "color" : "FFFFFF",
+            "color" : "121212",
             "hobbies" : "Tirer à l'arc, sauter à la corde, tirer sur la corde",
             "img" : "002.jpg"
         },
@@ -44,7 +44,7 @@
             "city" : "Muret",
             "zip" : 31600,
             "website" : "http://hostamp.free.fr",
-            "color" : "FFFFFF",
+            "color" : "CDCDCD",
             "hobbies" : "Tirer à l'arc, sauter à la corde, tirer sur la corde",
             "img" : "003.jpg"
         },
@@ -60,7 +60,7 @@
             "city" : "Muret",
             "zip" : 31600,
             "website" : "http://hostamp.free.fr",
-            "color" : "FFFFFF",
+            "color" : "E1E1E1",
             "hobbies" : "Tirer à l'arc, sauter à la corde, tirer sur la corde",
             "img" : "004.jpg"
         }

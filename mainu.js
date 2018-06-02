@@ -23,8 +23,10 @@ function clickOnUser(that) {
                                 &<br>
                                 <b>City : </b>${item.city}<br>
                                 <b>Hobbies : </b>${item.hobbies}<br>
-                                <br>
+                                <b>website : </b><a href="${item.website}">${item.website}</a><br>
                             </p>
+                            <b>Favorite Color : </b><div class="favcolor" style="background-color:#${item.color}"></div><br>
+                            <br>
                         </div>
                     </div>                                   
                 </div>
