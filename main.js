@@ -304,30 +304,31 @@ function getLocalPosts() {
         paragraphe.innerHTML = `<h2 class="text-center">Posts List</h2>
                                 <hr class="mb-4">`;
         var id = 0;
-        for (var post of local.posts) {
+        for (var i = local.posts.length - 1; i >= 0; i--) {
+            console.log(i);
             // paragraphe.innerHTML += `<br> ${user.firstname} ${user.lastname}`;
             var element = document.createElement("div");
-            element.setAttribute("id", `post_${id}`);
+            element.setAttribute("id", `post_${i}`);
             element.setAttribute("class", "card mb-5 px-4 py-3");
             element.innerHTML = `<hr class="mb-4">
 				<article>
 					<header class="row">
 						<div class="col-md-10">
-							<h4 class="text-info">${post.title}</h4>
+							<h4 class="text-info">${local.posts[i].title}</h4>
 						</div>
 						<div class="post-edit col-md-2 text-right">
-							<button class="btn btn-sm" onclick="editPost(${id})">✎</button>
-                            <button class="btn btn-sm" onclick="deletePost(${id})">␡</button>
+							<button class="btn btn-sm" onclick="editPost(${i})">✎</button>
+                            <button class="btn btn-sm" onclick="deletePost(${i})">␡</button>
 						</div>
                     </header>
                     <hr class="mb-4">
-                    <p id="post-content_${id}">
-						${post.content}
+                    <p id="post-content_${i}">
+						${local.posts[i].content}
                     </p>
-                    <hr id="guide_${id}" class="mb-4">
+                    <hr id="guide_${i}" class="mb-4">
 					<footer>
 						<!-- <small> -->
-							Author : ${post.author}
+							Author : ${local.posts[i].author}
 						<!-- </small> -->
 					</footer>
                     <hr class="mb-4">
