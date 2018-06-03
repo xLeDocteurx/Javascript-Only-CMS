@@ -309,7 +309,7 @@ function getLocalPosts() {
             // paragraphe.innerHTML += `<br> ${user.firstname} ${user.lastname}`;
             var element = document.createElement("div");
             element.setAttribute("id", `post_${i}`);
-            element.setAttribute("class", "card mb-5 px-4 py-3");
+            element.setAttribute("class", "card mb-5 px-4 py-3 shadow");
             element.innerHTML = `<hr class="mb-4">
 				<article>
 					<header class="row">
